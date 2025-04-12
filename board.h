@@ -43,3 +43,25 @@ void DrawStarPoints() {
         fillcircle(x, y, 3); // 绘制半径3px的实心圆
     }
 }
+
+// 将屏幕坐标转换为棋盘逻辑坐标
+bool ScreenToBoard(int screenX, int screenY, int& boardX, int& boardY) {
+    // 调整计算方式适应首次棋盘方案
+    boardX
+        = (screenX - OFFSET + CELL_SIZE / 2) / CELL_SIZE;
+    boardY
+        = (screenY - OFFSET + CELL_SIZE / 2) / CELL_SIZE;
+
+    // 边界检查
+    return (boardX >= 0 && boardX < BOARD_SIZE && boardY>= 0 && boardY < BOARD_SIZE);
+}
+
+void DrawChessBoard() {
+    //设置棋盘背景颜色
+    setbkcolor(RGB(220, 179, 92));
+    cleardevice();
+
+	DrawGrid(); // 绘制棋盘网格
+
+	DrawStarPoints(); // 绘制星位
+}
