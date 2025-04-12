@@ -2,11 +2,7 @@
 
 #include <graphics.h>
 
-const int BOARD_SIZE = 20; // 19*19的棋盘
-
-const int CELL_SIZE = 30; // 每个格子30像素
-
-const int OFFSET = 50; // 棋盘的边距
+#include "board.h"
 
 // 棋子半径（略小于格子的一半）
 const int PIECE_RADIUS = CELL_SIZE * 0.4;
